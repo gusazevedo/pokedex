@@ -1,0 +1,24 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+
+    border-radius: 0.5rem;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.cardImg {
+    text-align: center;
+    img {
+        width: 80%;
+        -webkit-user-drag: none;
+        -khtml-user-drag: none;
+        -moz-user-drag: none;
+        -o-user-drag: none;
+    }
+}
+
+.cardInfo {
+    text-align: center;
+}

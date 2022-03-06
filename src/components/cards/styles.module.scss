@@ -1,0 +1,17 @@
+.cardContainer {
+    width: 100%;
+    padding: 1rem;
+
+    h2 {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+}
+
+.cardGrid {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill, 150px);
+    column-gap: 8px;
+    row-gap: 12px;
+}
