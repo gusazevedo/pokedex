@@ -19,7 +19,7 @@
 
 body {
   background-color: #F6F8FC;
-  color: #474747
+  color: #474747;
 }
 
 body, input, textarea, button {
@@ -47,5 +47,15 @@ button {
 main {
   max-width: 1200px;
   margin: 0 auto;
-  height: 100vh;
+  position: relative;
+
+  > img:first-child {
+    z-index: -1;
+    height: 40%;
+    top: -5%;
+    left: -5%;
+    position: absolute;
+    opacity: 5%;
+    transform: rotate(-20deg);
+  }
 }

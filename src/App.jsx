@@ -1,17 +1,15 @@
 import './App.scss';
 import Cards from './components/cards';
-import Footer from './components/footer';
 import Header from './components/header';
+import pokeball from './assets/pokeball.png';
 
 export default function App() {
 
     return (
-        <>
-            <main>
-                <Header/>
-                <Cards/>
-            </main>
-            <Footer />
-        </>
+        <main>
+            <img src={pokeball} alt='sdsd'/>
+            <Header/>
+            <Cards/>
+        </main>
     )
 }
