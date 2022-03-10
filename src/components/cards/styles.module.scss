@@ -11,7 +11,7 @@
 .cardGrid {
     display: grid;
     justify-content: center;
-    grid-template-columns: repeat(auto-fill, 150px);
+    grid-template-columns: repeat(auto-fill, 160px);
     column-gap: 8px;
     row-gap: 12px;
 }
@@ -19,8 +19,10 @@
 .modal {
     width: 90%;
     max-width: 40rem;
+    max-height: 35rem;
     background-color: #F6F8FC;
     border-radius: 0.5rem;
+    overflow-y: auto;
 }
 
 .modalOverlay {
@@ -34,4 +36,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.ReactModal__Body--open,
+.ReactModal__Html--open {
+  overflow: hidden;
 }

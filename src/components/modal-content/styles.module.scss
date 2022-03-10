@@ -13,22 +13,30 @@
 
 .modalContent {
     display: flex;
+    flex-direction: row;
     padding: 1rem;
-}
 
-.pokemonImg {
-    max-height: 250px;
-    max-width: 250px;
-    
-    img {
-        object-fit: cover;
-        height: 100%;
+    @media (max-width: 800px) {
+        flex-direction: column;
     }
-}
 
-.statsContainer {
-    width: 100%;
-    padding: 1rem;
+    .pokemonImg {
+        flex: 50%;
+        max-height: 250px;
+        max-width: 250px;
+        margin: auto;
+        
+        img {
+            object-fit: cover;
+            width: 100%;
+        }
+    }
+
+    .statsContainer {
+        flex: 50%;
+        width: 100%;
+        padding: 1rem;
+    }
 }
 
 .name {

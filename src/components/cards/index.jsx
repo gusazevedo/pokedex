@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import Modal from 'react-modal';
-import { asyncGetPokemonInformations, asyncGetPokemonList } from '../../services/api';
+import { asyncGetPokemonInformations, getPokemons } from '../../services/api';
 import Card from '../card';
 import ModalContent from '../modal-content';
+import Searchfield from '../search-field';
 import styles from './styles.module.scss';
 
 Modal.setAppElement('#root');
@@ -12,9 +13,8 @@ export default function Cards() {
     const [selectedPokemon, setSelectedPokemon] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    async function getPokemonList() {
-        setPokemonList([]);
-        const { data } = await asyncGetPokemonList();
+    async function getPokemonList(pokemon) {
+        const { data } = await getPokemons(pokemon);
         await data.results.forEach( async (pokemon) => {
             const getPokemonInfo = await asyncGetPokemonInformations(pokemon.name);
             setPokemonList(previousState => [...previousState, getPokemonInfo.data]);
@@ -27,11 +27,12 @@ export default function Cards() {
     }
 
     useEffect(() => {
-        getPokemonList();
+        getPokemonList('');
     }, []);
 
     return (
         <section className={styles.cardContainer}>
+            <Searchfield />
             <h2>Pokémons</h2>
             <div className={styles.cardGrid}>
                 <Card items={pokemonList} onClick={handleSelectPokemon}/>
@@ -42,9 +43,13 @@ export default function Cards() {
                 onRequestClose={() => setIsModalOpen(false)}
                 overlayClassName={styles.modalOverlay}
                 className={styles.modal}
+                onAfterOpen={() => document.body.style.overflow = 'hidden'}
+                onAfterClose={() => document.body.style.overflow = 'unset'}
+                shouldCloseOnOverlayClick={false}
             >
                 <ModalContent
                     pokemon={selectedPokemon}
+                    handleCloseModal={setIsModalOpen}
                 />
             </Modal>
         </section>
