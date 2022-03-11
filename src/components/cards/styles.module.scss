@@ -1,6 +1,7 @@
 .cardContainer {
     width: 100%;
     padding: 1rem;
+    margin: 5rem 0;
 
     h2 {
         text-align: center;
@@ -12,8 +13,7 @@
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(auto-fill, 160px);
-    column-gap: 8px;
-    row-gap: 12px;
+    gap: 12px;
 }
 
 .modal {

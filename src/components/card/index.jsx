@@ -2,7 +2,7 @@ import { colours } from '../../utils/type-colors';
 import styles from './styles.module.scss';
 
 export default function Card({ items, onClick }) {
-    return items.map((item) => (
+    return items.length > 0 && items.map((item) => (
         <div
             className={styles.card}
             key={item.id}

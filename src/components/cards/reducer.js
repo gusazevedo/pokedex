@@ -14,6 +14,8 @@ function reducer(state = INITIAL_STATE, { type, payload }) {
     switch(type) {
         case pokeReducer.IS_LOADING:
             return {...state, loading: payload};
+        case pokeReducer.SET_POKEMON_LIST:
+            return {...state, pokemonList: payload};
         case pokeReducer.ASYNC_GET_POKEMON_LIST:
             return {...state, pokemonList: payload};
         default:

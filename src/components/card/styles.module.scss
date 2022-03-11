@@ -6,6 +6,11 @@
     border-radius: 0.5rem;
     cursor: pointer;
     background-color: #fff;
+    transition: transform 0.1s;
+
+    &:hover {
+        transform: scale(1.05);
+    }
 }
 
 .cardImg {
