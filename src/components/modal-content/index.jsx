@@ -1,11 +1,6 @@
 import styles from './styles.module.scss';
 
 export default function ModalContent({ pokemon, handleCloseModal }) {
-    function powerCalculate(stat) {
-        const maxPower = 500;
-        const percent = stat * 100
-    }
-
     return (
         <div className={styles.modalContainer}>
             <span onClick={() => handleCloseModal(false)}>X</span>

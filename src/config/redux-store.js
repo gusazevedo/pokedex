@@ -6,7 +6,7 @@ import rootReducer from './root-reducer';
 const sagaMiddleware = createSagaMiddleware();
 const store = compose(
     applyMiddleware(sagaMiddleware),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+    window.navigator.userAgent.includes('Chrome') ? window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() : compose,
 )(createStore)(rootReducer);
 
 sagaMiddleware.run(RootSaga);
